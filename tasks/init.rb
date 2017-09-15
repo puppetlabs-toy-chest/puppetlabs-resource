@@ -18,12 +18,12 @@ def get(type, name)
   end
 
   result = output_instances.to_json
-  { status: result }
+  { _output: result }
 end
 
-args = JSON.parse(STDIN.read)
-type = args['type']
-name = args['name']
+params = JSON.parse(STDIN.read)
+type = params['type']
+name = params['name']
 
 begin
   result = get(type, name)
