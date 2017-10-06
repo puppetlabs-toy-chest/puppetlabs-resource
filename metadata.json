@@ -4,7 +4,7 @@
   "author": "puppet",
   "summary": "Tasks that lets you inspect resources on a system",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/puppetlabs/puppetlabs-resource",
   "dependencies": [],
   "operatingsystem_support": [
     {
