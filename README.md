@@ -30,7 +30,7 @@ To run a resource task, use the task command, specifying the type and optionally
 For example, to get the state of the root user, run:
 
 * With PE, run `puppet task run resource type=user title=root --nodes neptune`.
-* With Bolt, run `bolt task run resource type=user title=root --nodes neptune --modules ~/modules`.
+* With Bolt, run `bolt task run resource type=user title=root --nodes neptune --modulepath ~/modules`.
 
 You can also run tasks in the PE console. See PE task documentation for complete information.
 
