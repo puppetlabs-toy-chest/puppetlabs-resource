@@ -5,7 +5,7 @@ require 'beaker/module_install_helper'
 require 'beaker/task_helper'
 
 run_puppet_install_helper
-install_ca_certs unless pe_install? 
+install_ca_certs unless pe_install?
 install_bolt_on(hosts) unless pe_install?
 install_module_on(hosts)
 install_module_dependencies_on(hosts)

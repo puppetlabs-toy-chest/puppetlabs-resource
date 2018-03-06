@@ -5,7 +5,7 @@ require 'json'
 
 def get(type, name)
   output_instances = []
-  opts = { name: name } unless name.nil?
+  { name: name } unless name.nil?
   type = Puppet::Type.type(type.to_sym)
   instances = type.instances
   if name.nil?
