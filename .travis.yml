@@ -49,7 +49,7 @@ matrix:
       rvm: 2.1.9
     -
       env: CHECK=release_checks
-      rvm: 2.1.9
+      rvm: 2.4.1
 branches:
   only:
     - master
