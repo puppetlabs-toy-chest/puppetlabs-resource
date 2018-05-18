@@ -10,7 +10,7 @@ install_bolt_on(hosts) unless pe_install?
 install_module_on(hosts)
 install_module_dependencies_on(hosts)
 
-UNSUPPORTED_PLATFORMS = %w[AIX].freeze
+UNSUPPORTED_PLATFORMS = ['AIX'].freeze
 
 RSpec.configure do |c|
   # Readable test descriptions
