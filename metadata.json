@@ -1,7 +1,7 @@
 {
   "name": "puppetlabs-resource",
   "version": "0.2.0",
-  "author": "puppet",
+  "author": "puppetlabs",
   "summary": "Tasks that lets you inspect resources on a system",
   "license": "Apache-2.0",
   "source": "https://github.com/puppetlabs/puppetlabs-resource",
