@@ -21,7 +21,7 @@ describe 'resource task' do
 
   describe 'resource' do
     it 'get a single instance' do
-      result = run('type' => 'user', 'name' => "#{username}")
+      result = run('type' => 'user', 'name' => username.to_s)
       expect(result.first['status']).to eq 'success'
     end
     it 'get all instances' do

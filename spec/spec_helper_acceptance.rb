@@ -24,7 +24,7 @@ RSpec.configure do |c|
   c.formatter = :documentation
 
   c.add_setting :module_path
-  c.module_path  = File.join(base_dir, 'fixtures', 'modules')
+  c.module_path = File.join(base_dir, 'fixtures', 'modules')
 
   # Configure all nodes in nodeset
   c.before :suite do
