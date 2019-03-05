@@ -11,22 +11,18 @@ describe 'resource task' do
   include Beaker::TaskHelper::Inventory
   include BoltSpec::Run
 
-  let(:module_path) { RSpec.configuration.module_path }
-  let(:config) { { 'modulepath' => module_path } }
-  let(:inventory) { hosts_to_inventory }
-
-  def run(params)
-    run_task('resource', 'default', params, config: config, inventory: inventory)
-  end
-
   describe 'resource' do
     it 'get a single instance' do
-      result = run('type' => 'user', 'name' => username.to_s)
+      result = task_run('resource', 'type' => 'user', 'name' => username.to_s)
+      
       expect(result.first['status']).to eq 'success'
+      expect(result.first["result"]["_output"]).to match %r{name.*:.*"#{username}"}
     end
     it 'get all instances' do
-      result = run('type' => 'user')
+      result = task_run('resource', 'type' => 'user')
+      
       expect(result.first['status']).to eq 'success'
+      expect(result.first["result"]["_output"]).to match %r{name.*:.*"#{username}"}
     end
   end
 end

@@ -17,14 +17,15 @@ install_module_dependencies_on(hosts)
 
 UNSUPPORTED_PLATFORMS = ['AIX'].freeze
 
-base_dir = File.dirname(File.expand_path(__FILE__))
+# Bolt helper task
+def task_run(task_name, params)
+  bolt_config = { 'modulepath' => File.join(Dir.pwd, 'spec', 'fixtures', 'modules') }
+  run_task(task_name, 'default', params, config: bolt_config, inventory: hosts_to_inventory)
+end
 
 RSpec.configure do |c|
   # Readable test descriptions
   c.formatter = :documentation
-
-  c.add_setting :module_path
-  c.module_path = File.join(base_dir, 'fixtures', 'modules')
 
   # Configure all nodes in nodeset
   c.before :suite do
