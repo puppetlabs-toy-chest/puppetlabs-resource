@@ -7,15 +7,26 @@ username = if fact('operatingsystem') == 'windows'
              'root'
            end
 
-describe 'resource task', if: puppet_version =~ %r{(5\.\d\.\d)} && !UNSUPPORTED_PLATFORMS.include?(fact('operatingsystem')) do
+describe 'resource task' do
+  include Beaker::TaskHelper::Inventory
+  include BoltSpec::Run
+
+  let(:module_path) { RSpec.configuration.module_path }
+  let(:config) { { 'modulepath' => module_path } }
+  let(:inventory) { hosts_to_inventory.merge('features' => ['puppet-agent']) }
+
+  def run(params)
+    run_task('resource', 'default', params, config: config, inventory: inventory)
+  end
+
   describe 'resource' do
     it 'get a single instance' do
-      result = run_task(task_name: 'resource', params: "type=user name=#{username}")
-      expect_multiple_regexes(result: result, regexes: [%r{name.*:.*"#{username}"}, %r{Job completed. 1/1 nodes succeeded|Ran on 1 node}])
+      result = run('type' => 'user', 'name' => "#{username}")
+      expect(result.first['status']).to eq 'success'
     end
     it 'get all instances' do
-      result = run_task(task_name: 'resource', params: 'type=user')
-      expect_multiple_regexes(result: result, regexes: [%r{.*name.*"#{username}"}, %r{Job completed. 1/1 nodes succeeded|Ran on 1 node}])
+      result = run('type' => 'user')
+      expect(result.first['status']).to eq 'success'
     end
   end
 end

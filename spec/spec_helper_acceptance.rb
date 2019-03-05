@@ -1,3 +1,5 @@
+require 'bolt_spec/run'
+require 'beaker-task_helper/inventory'
 require 'beaker-pe'
 require 'beaker-puppet'
 require 'puppet'
@@ -15,9 +17,14 @@ install_module_dependencies_on(hosts)
 
 UNSUPPORTED_PLATFORMS = ['AIX'].freeze
 
+base_dir = File.dirname(File.expand_path(__FILE__))
+
 RSpec.configure do |c|
   # Readable test descriptions
   c.formatter = :documentation
+
+  c.add_setting :module_path
+  c.module_path  = File.join(base_dir, 'fixtures', 'modules')
 
   # Configure all nodes in nodeset
   c.before :suite do
