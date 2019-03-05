@@ -13,7 +13,7 @@ describe 'resource task' do
 
   let(:module_path) { RSpec.configuration.module_path }
   let(:config) { { 'modulepath' => module_path } }
-  let(:inventory) { hosts_to_inventory.merge('features' => ['puppet-agent']) }
+  let(:inventory) { hosts_to_inventory }
 
   def run(params)
     run_task('resource', 'default', params, config: config, inventory: inventory)
