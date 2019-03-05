@@ -14,15 +14,15 @@ describe 'resource task' do
   describe 'resource' do
     it 'get a single instance' do
       result = task_run('resource', 'type' => 'user', 'name' => username.to_s)
-      
+
       expect(result.first['status']).to eq 'success'
-      expect(result.first["result"]["_output"]).to match %r{name.*:.*"#{username}"}
+      expect(result.first['result']['_output']).to match %r{name.*:.*"#{username}"}
     end
     it 'get all instances' do
       result = task_run('resource', 'type' => 'user')
-      
+
       expect(result.first['status']).to eq 'success'
-      expect(result.first["result"]["_output"]).to match %r{name.*:.*"#{username}"}
+      expect(result.first['result']['_output']).to match %r{name.*:.*"#{username}"}
     end
   end
 end
