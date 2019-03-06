@@ -17,9 +17,11 @@ This module provides the resource task. This task allows you to inspect the valu
 ## Requirements
 This module is compatible with Puppet Enterprise and Puppet Bolt.
 
-* To run tasks with Puppet Enterprise, PE 2017.3 or later must be installed on the machine from which you are running task commands. Machines receiving task requests must be Puppet agents.
+* To run tasks with Puppet Enterprise, PE 2018.1 or later must be installed on the machine from which you are running task commands. Machines receiving task requests must be Puppet agents.
 
 * To run tasks with Puppet Bolt, Bolt 1.0 or later must be installed on the machine from which you are running task commands. Machines receiving task requests must have SSH or WinRM services enabled.
+
+The module may still be compatible with older verions of Puppet Enterprise and Puppet Bolt however we do not support these and their use is not advised.
 
 ## Usage
 
