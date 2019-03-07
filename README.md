@@ -21,8 +21,6 @@ This module is compatible with Puppet Enterprise and Puppet Bolt.
 
 * To run tasks with Puppet Bolt, Bolt 1.0 or later must be installed on the machine from which you are running task commands. Machines receiving task requests must have SSH or WinRM services enabled.
 
-The module may still be compatible with older verions of Puppet Enterprise and Puppet Bolt however we do not support these and their use is not advised.
-
 ## Usage
 
 To run a resource task, use the task command, specifying the type and optionally the title of the resource.
