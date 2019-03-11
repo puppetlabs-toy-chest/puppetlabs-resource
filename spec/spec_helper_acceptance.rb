@@ -20,7 +20,8 @@ UNSUPPORTED_PLATFORMS = ['AIX'].freeze
 # Bolt helper task
 def task_run(task_name, params)
   bolt_config = { 'modulepath' => File.join(Dir.pwd, 'spec', 'fixtures', 'modules') }
-  run_task(task_name, 'default', params, config: bolt_config, inventory: hosts_to_inventory)
+  inventory = hosts_to_inventory.merge('features' => ['puppet-agent'])
+  run_task(task_name, 'default', params, config: bolt_config, inventory: inventory)
 end
 
 RSpec.configure do |c|
