@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-resource",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "puppetlabs",
   "summary": "Tasks that lets you inspect resources on a system",
   "license": "Apache-2.0",

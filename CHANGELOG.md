@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [0.3.1](https://github.com/puppetlabs/puppetlabs-resource/tree/0.3.1) (2019-04-05)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/0.3.0...0.3.1)
+
+### Fixed
+
+- \(MODULES-8717\) Fix dependency issue with BoltSpec [\#43](https://github.com/puppetlabs/puppetlabs-resource/pull/43) ([eimlav](https://github.com/eimlav))
+- pdksync - \(FM-7655\) Fix rubygems-update for ruby \< 2.3 [\#36](https://github.com/puppetlabs/puppetlabs-resource/pull/36) ([tphoney](https://github.com/tphoney))
+
 ## [0.3.0](https://github.com/puppetlabs/puppetlabs-resource/tree/0.3.0) (2018-09-28)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/0.2.0...0.3.0)
