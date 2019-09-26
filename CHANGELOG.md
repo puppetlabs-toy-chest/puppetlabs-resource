@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v0.4.0](https://github.com/puppetlabs/puppetlabs-resource/tree/v0.4.0) (2019-09-26)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/0.3.1...v0.4.0)
+
+### Changed
+
+- pdksync - \(MODULES-8444\) - Raise lower Puppet bound [\#51](https://github.com/puppetlabs/puppetlabs-resource/pull/51) ([david22swan](https://github.com/david22swan))
+
+### Added
+
+- \(FM-8158\) Add Windows Server 2019 support [\#56](https://github.com/puppetlabs/puppetlabs-resource/pull/56) ([eimlav](https://github.com/eimlav))
+- \(FM-8046\) Add Redhat 8 support [\#55](https://github.com/puppetlabs/puppetlabs-resource/pull/55) ([sheenaajay](https://github.com/sheenaajay))
+
 ## [0.3.1](https://github.com/puppetlabs/puppetlabs-resource/tree/0.3.1) (2019-04-05)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/0.3.0...0.3.1)
