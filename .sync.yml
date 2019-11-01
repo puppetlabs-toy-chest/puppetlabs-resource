@@ -7,7 +7,68 @@
   unmanaged: true
 
 .travis.yml:
-  unmanaged: true
+  dist: trusty
+  branches:
+    - release
+  user: puppet
+  secure: ""
+  includes:
+    -
+      bundler_args:
+      dist: trusty
+      env: PLATFORMS=deb_puppet5
+      rvm: 2.5.3
+      before_script:
+      - bundle exec rake 'litmus:provision_list[travis_deb]'
+      - bundle exec bolt command run 'apt-get install wget -y' --inventoryfile inventory.yaml --nodes='localhost*'
+      - bundle exec rake 'litmus:install_agent[puppet5]'
+      - bundle exec rake litmus:install_module
+      script:
+      - bundle exec rake litmus:acceptance:parallel
+      services: docker
+      stage: acceptance
+      sudo: required
+    -
+      bundler_args:
+      dist: trusty
+      env: PLATFORM=centos:deb_puppet6
+      rvm: 2.5.3
+      before_script:
+      - bundle exec rake 'litmus:provision_list[travis_deb]'
+      - bundle exec bolt command run 'apt-get install wget -y' --inventoryfile inventory.yaml --nodes='localhost*'
+      - bundle exec rake 'litmus:install_agent[puppet6]'
+      - bundle exec rake litmus:install_module
+      script:
+      - bundle exec rake litmus:acceptance:parallel
+      services: docker
+      sudo: required
+    -
+      bundler_args:
+      dist: trusty
+      env: PLATFORMS=el_puppet5
+      rvm: 2.5.3
+      before_script:
+      - bundle exec rake 'litmus:provision_list[travis_el]'
+      - bundle exec rake 'litmus:install_agent[puppet5]'
+      - bundle exec rake litmus:install_module
+      script:
+      - bundle exec rake litmus:acceptance:parallel
+      services: docker
+      sudo: required
+    -
+      bundler_args:
+      dist: trusty
+      env: PLATFORM=centos:el_puppet6
+      rvm: 2.5.3
+      before_script:
+      - bundle exec rake 'litmus:provision_list[travis_el]'
+      - bundle exec rake 'litmus:install_agent[puppet6]'
+      - bundle exec rake litmus:install_module
+      script:
+      - bundle exec rake litmus:acceptance:parallel
+      services: docker
+      stage: acceptance
+      sudo: required
 
 .yardopts:
   optional:
@@ -20,27 +81,10 @@ Gemfile:
         git: 'https://github.com/skywinder/github-changelog-generator'
         ref: '20ee04ba1234e9e83eb2ffb5056e23d641c7a018'
         condition: "Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.2.2')"
-  required:
-    ':system_tests':
-      - gem: 'puppet-module-posix-system-r#{minor_version}'
-        platforms: ruby
-      - gem: 'puppet-module-win-system-r#{minor_version}'
-        platforms:
-          - mswin
-          - mingw
-          - x64_mingw
-      - gem: bolt
-        version: '~> 1.3'
-        condition: ENV['GEM_BOLT']
 
 Rakefile:
   requires:
     - puppet-lint/tasks/puppet-lint
-  extras: |
-    # spec_prep is required to setup fixtures used by the acceptance tests
-    beaker_task = Rake::Task['beaker']
-    spec_prep =  Rake::Task['spec_prep']
-    beaker_task.enhance(beaker_task.prerequisite_tasks << spec_prep)
 
 spec/spec_helper.rb:
   mock_with: ':rspec'
