@@ -60,9 +60,12 @@
     services: docker
     stage: acceptance
     sudo: required
+  simplecov: true
 ".yardopts":
   optional:
   - "--output-dir docs/"
+appveyor.yml:
+  simplecov: true
 Gemfile:
   optional:
     ":development":
