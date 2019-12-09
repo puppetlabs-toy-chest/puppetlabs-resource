@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.1.0](https://github.com/puppetlabs/puppetlabs-resource/tree/v1.1.0) (2019-12-09)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/v1.0.0...v1.1.0)
+
+### Added
+
+- pdksync - "MODULES-10242 Add ubuntu14 support back to the modules" [\#75](https://github.com/puppetlabs/puppetlabs-resource/pull/75) ([sheenaajay](https://github.com/sheenaajay))
+
 ## [v1.0.0](https://github.com/puppetlabs/puppetlabs-resource/tree/v1.0.0) (2019-12-02)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/v0.4.0...v1.0.0)
@@ -51,6 +59,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - pdksync - \(MODULES-6805\) metadata.json shows support for puppet 6 [\#28](https://github.com/puppetlabs/puppetlabs-resource/pull/28) ([tphoney](https://github.com/tphoney))
 - pdksync - \(MODULES-7658\) use beaker3 in puppet-module-gems [\#24](https://github.com/puppetlabs/puppetlabs-resource/pull/24) ([tphoney](https://github.com/tphoney))
+- \(MODULES-7645\) - Update README Limitations section [\#23](https://github.com/puppetlabs/puppetlabs-resource/pull/23) ([eimlav](https://github.com/eimlav))
 - \(FM-6924\) - Change windows user to Administrator in tests [\#16](https://github.com/puppetlabs/puppetlabs-resource/pull/16) ([pmcmaw](https://github.com/pmcmaw))
 
 ## 0.2.0
