@@ -1,37 +1,9 @@
 ---
 ".gitlab-ci.yml":
   delete: true
-".travis.yml":
-  global_env: 
-    - HONEYCOMB_WRITEKEY="7f3c63a70eecc61d635917de46bea4e6",HONEYCOMB_DATASET="litmus tests"
-  dist: trusty
-  deploy_to_forge:
-    enabled: false
-  branches:
-  - release
-  user: puppet
-  secure: ''
-  use_litmus: true
-  litmus:
-    provision_list:
-      - travis_deb
-      - travis_ub
-      - travis_el7
-      - travis_el8
-      - ---travis_el
-  simplecov: true
-  notifications:
-    slack:
-      secure: >-
-        e9F4WyhqzG+sMkVI54lf93+HM7o0KIf8xRXVTTNxBhQslboob9uDjkOe/cNSrMKJNLau63pwD9uGbqkLehDbLey9djJV/yyEnbDW599NHd9puNvtKk+Yxqe5WDD9p3qZqBi8hkPMUfHbRU3ViqCMmPeHk+83sD+Dq5Qs7EYI8VKYOnhP5v0Lw7G+eWbpt0CV/Ddur7/wwR0e4amMgumFlU++Kd8/ZBFmePMK35CODr7Gnnlq/6EI0u73qzv6PsMAgbqVEU2rdcGBrfZq4q2dCdYSzQEEXMUMuOwEhxT1txuIcofFcXzqq5YzHHgh0gr/9ccbBXzSRKxoI1MTOM6cCvXVhKInAJknOF2kyOJa60h8sxkmia4WLP9baAdTD/SbzZgOksrucMPIaak9DkNYgsqHauwCzxqf8S/tfvvTNtiHoods4zX+HE5yUeOhSU6RylBSNOuo6ZeKMkdOS4k6wDEtwKR3H4XWhtQOI2y9lQwQsDpRq3w8JFwljr4MZTrJFzvRsf//spgTC+Wk0BU31Gr3KEDR5x4ahLpRAYl2/iwfH7vb5rrNktCcxzx+AqRusVout4AEEvKH8WmhGzDo564Ll3Wg7uWw4+5T6WTpsTW9vnWhQ1/K1Yd1SVSFSxDgzqyTgXarl6Uf1qSWDKOwPGb+JSpVsg3WuiVNh3utkCw=
-".yardopts":
-  optional:
-  - "--output-dir docs/"
 appveyor.yml:
-  environment:
-    HONEYCOMB_WRITEKEY: 7f3c63a70eecc61d635917de46bea4e6
-    HONEYCOMB_DATASET: litmus tests
-  simplecov: true
+  delete: true
+
 Gemfile:
   optional:
     ":development":
@@ -47,3 +19,10 @@ spec/spec_helper.rb:
   coverage_report: true
 .github/workflows/auto_release.yml:
   unmanaged: false
+.github/workflows/spec.yml:
+  checks: 'syntax lint metadata_lint check:symlinks check:git_ignore check:dot_underscore check:test_file rubocop'
+  unmanaged: false
+.github/workflows/release.yml:
+  unmanaged: false
+.travis.yml:
+  delete: true
