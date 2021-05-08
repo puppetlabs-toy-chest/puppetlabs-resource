@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.0.0](https://github.com/puppetlabs/puppetlabs-resource/tree/v2.0.0) (2021-05-08)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/v1.1.0...v2.0.0)
+
+### Changed
+
+- pdksync - Remove Puppet 5 from testing and bump minimal version to 6.0.0 [\#111](https://github.com/puppetlabs/puppetlabs-resource/pull/111) ([carabasdaniel](https://github.com/carabasdaniel))
+
+### Added
+
+- pdksync - \(feat\) - Add support for Puppet 7 [\#108](https://github.com/puppetlabs/puppetlabs-resource/pull/108) ([daianamezdrea](https://github.com/daianamezdrea))
+- pdksync - \(IAC-973\) - Update travis/appveyor to run on new default branch `main` [\#100](https://github.com/puppetlabs/puppetlabs-resource/pull/100) ([david22swan](https://github.com/david22swan))
+
 ## [v1.1.0](https://github.com/puppetlabs/puppetlabs-resource/tree/v1.1.0) (2019-12-09)
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-resource/compare/v1.0.0...v1.1.0)
@@ -42,7 +55,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixed
 
 - \(MODULES-8717\) Fix dependency issue with BoltSpec [\#43](https://github.com/puppetlabs/puppetlabs-resource/pull/43) ([eimlav](https://github.com/eimlav))
-- pdksync - \(FM-7655\) Fix rubygems-update for ruby \< 2.3 [\#36](https://github.com/puppetlabs/puppetlabs-resource/pull/36) ([tphoney](https://github.com/tphoney))
 
 ## [0.3.0](https://github.com/puppetlabs/puppetlabs-resource/tree/0.3.0) (2018-09-28)
 
@@ -57,6 +69,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixed
 
+- pdksync - \(FM-7655\) Fix rubygems-update for ruby \< 2.3 [\#36](https://github.com/puppetlabs/puppetlabs-resource/pull/36) ([tphoney](https://github.com/tphoney))
 - pdksync - \(MODULES-6805\) metadata.json shows support for puppet 6 [\#28](https://github.com/puppetlabs/puppetlabs-resource/pull/28) ([tphoney](https://github.com/tphoney))
 - pdksync - \(MODULES-7658\) use beaker3 in puppet-module-gems [\#24](https://github.com/puppetlabs/puppetlabs-resource/pull/24) ([tphoney](https://github.com/tphoney))
 - \(MODULES-7645\) - Update README Limitations section [\#23](https://github.com/puppetlabs/puppetlabs-resource/pull/23) ([eimlav](https://github.com/eimlav))
